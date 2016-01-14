@@ -16,8 +16,6 @@ class InfoPostingMapViewController: UIViewController, MKMapViewDelegate, UITextF
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var submit: UIButton!
     
-    var studentThatIsLoggedIn   = { return GlobalVar.sharedInstance.studentThatIsLoggedIn } // global var
-
     /********************************************************************************************************
      * Setup up map alpha and actvity indicator. Add annotation to map based on address entered in prior VC *
      ********************************************************************************************************/
@@ -62,7 +60,7 @@ class InfoPostingMapViewController: UIViewController, MKMapViewDelegate, UITextF
      * Set up the map, add the annotation, center the annotation it the middle of the map                   *
      ********************************************************************************************************/
     func mapView(mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let coordinates = studentThatIsLoggedIn().coordinates
+        let coordinates = GlobalVar.sharedInstance.studentThatIsLoggedIn.coordinates
         let pointAnnotation:MKPointAnnotation = MKPointAnnotation()
         pointAnnotation.coordinate = coordinates
         mapView.addAnnotation(pointAnnotation)
@@ -105,9 +103,9 @@ class InfoPostingMapViewController: UIViewController, MKMapViewDelegate, UITextF
         dispatch_async(dispatch_get_main_queue()) {
             var annotations = [MKPointAnnotation]()     // dictionary of annotations added to the mapview
             let myAnnotation = MKPointAnnotation()      // the single annotation to show
-            myAnnotation.coordinate = self.studentThatIsLoggedIn().coordinates
-            let first = self.studentThatIsLoggedIn().firstName
-            let last = self.studentThatIsLoggedIn().lastName
+            myAnnotation.coordinate = GlobalVar.sharedInstance.studentThatIsLoggedIn.coordinates
+            let first = GlobalVar.sharedInstance.studentThatIsLoggedIn.firstName
+            let last = GlobalVar.sharedInstance.studentThatIsLoggedIn.lastName
             myAnnotation.title = ""
             myAnnotation.title = "\(first) \(last)"
             annotations.append(myAnnotation)
@@ -116,7 +114,7 @@ class InfoPostingMapViewController: UIViewController, MKMapViewDelegate, UITextF
             
             /* perform some map housekeeping */
             let span = MKCoordinateSpanMake(0.1,0.1)    // set reasonable granularity
-            let region = MKCoordinateRegion(center: self.studentThatIsLoggedIn().coordinates , span: span ) // center map
+            let region = MKCoordinateRegion(center: GlobalVar.sharedInstance.studentThatIsLoggedIn.coordinates , span: span ) // center map
             self.mapView.setRegion(region, animated: true)
         }
     }

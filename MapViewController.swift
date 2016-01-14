@@ -13,9 +13,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    var allStudentLocationsArray: [StudentInformation]    { return GlobalVar.sharedInstance.studentLocations }
     var annotations = [MKPointAnnotation]()         // array of annotations that are on the map
-    var loggedInStudentAnnotations = [MKPointAnnotation]()  // arrary of studentLoggedIn annotations, including dequeued ones
+    var loggedInStudentAnnotations = [MKPointAnnotation]()  // arrary of studentLoggedIn annotations
     
     /********************************************************************************************************
      * Get the first 100 student locations and store in a global array of locations                          *
@@ -80,10 +79,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             
             do {
                 try inner()
-                if (self.allStudentLocationsArray.count > 0) {      // if there is a location
+                if (GlobalVar.sharedInstance.studentLocations.count > 0) {      // if there is a location
                     
                     /* When the array is complete, we add the annotations to the map. */
-                    for student in self.allStudentLocationsArray { // for each student in the array
+                    for student in GlobalVar.sharedInstance.studentLocations { // for each student in the array
                         // get the info that will be in each annotation view
                         let coordinate = student.coordinates
                         let first = student.firstName

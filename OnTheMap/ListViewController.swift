@@ -11,8 +11,7 @@ import UIKit
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var allStudentLocationsArray: [StudentInformation]    { return GlobalVar.sharedInstance.studentLocations }
+
     
     /********************************************************************************************************
      * Set up delegates                                                                                     *
