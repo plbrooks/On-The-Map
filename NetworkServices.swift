@@ -463,6 +463,7 @@ class NetworkServices: NSObject {
         var array = [StudentInformation]()
         for student in newData {
             let newStudentLocation = StudentInformation(jsonStudentData: student)
+            
             array.append(newStudentLocation)
         }
         return array

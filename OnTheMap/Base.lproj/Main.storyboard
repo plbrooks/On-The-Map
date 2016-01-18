@@ -34,7 +34,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pN-cx-277" userLabel="Udacity Logon Fields View">
                                         <rect key="frame" x="106" y="93" width="307" height="213"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="  Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMn-Dr-pjI">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMn-Dr-pjI">
                                                 <rect key="frame" x="29" y="51" width="249" height="30"/>
                                                 <color key="backgroundColor" red="1" green="0.76198421985529896" blue="0.45528335401848552" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -44,7 +44,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="  Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlb-pe-ejw">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlb-pe-ejw">
                                                 <rect key="frame" x="29" y="87" width="249" height="30"/>
                                                 <color key="backgroundColor" red="1" green="0.76198421989999998" blue="0.45528335399999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -110,8 +110,8 @@
                                             <constraint firstAttribute="trailing" secondItem="swh-eD-2WA" secondAttribute="trailing" constant="29" id="iGs-hw-6kh"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbc-kd-75s">
-                                        <rect key="frame" x="260" y="306" width="0.0" height="226"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For testing, use Udacity email &quot;davidbowie@ziggy.com&quot;  with password &quot;stardust&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbc-kd-75s">
+                                        <rect key="frame" x="25" y="306" width="470" height="226"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>

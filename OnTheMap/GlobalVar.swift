@@ -19,6 +19,7 @@ class GlobalVar: NSObject {
     *************************************************************************************************************************/
     var studentLocations = [StudentInformation]()       // array of structs of students / locations to be shown on map of Student locations
     var studentThatIsLoggedIn = StudentInformation(jsonStudentData: nil)    // struc of the student that is logged in. Various vars updated from various VCs
+    var test = false
 
 
 }

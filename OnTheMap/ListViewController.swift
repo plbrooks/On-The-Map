@@ -36,7 +36,13 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ListViewCell") as! ListViewCell   // downcasting links in the custom class
         let studentLocation = GlobalVar.sharedInstance.studentLocations[indexPath.row]
-        let name = studentLocation.firstName + " " + studentLocation.lastName
+        var first = studentLocation.firstName
+        var last = studentLocation.lastName
+        if (GlobalVar.sharedInstance.test == true && first == Constants.test.changeThisFirstName && last == Constants.test.changeThisLastName) {
+            first = Constants.test.useThisFirstName
+            last = Constants.test.useThisLastName
+        }
+        let name = first + " " + last
         cell.label.text = name
         cell.link.text = studentLocation.mediaURL
         return cell

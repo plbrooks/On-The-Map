@@ -85,8 +85,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                     for student in GlobalVar.sharedInstance.studentLocations { // for each student in the array
                         // get the info that will be in each annotation view
                         let coordinate = student.coordinates
-                        let first = student.firstName
-                        let last = student.lastName
+                        var first = student.firstName
+                        var last = student.lastName
+                        if (GlobalVar.sharedInstance.test == true && first == Constants.test.changeThisFirstName && last == Constants.test.changeThisLastName) {
+                            first = Constants.test.useThisFirstName
+                            last = Constants.test.useThisLastName
+                        }
                         let mediaURL = student.mediaURL
                         
                         // add the info to the annotation

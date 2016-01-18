@@ -57,4 +57,16 @@ class Constants: NSObject {
         static let udacitySignup = "https://www.udacity.com/account/auth#!/signup"
     }
 
+    struct test {
+        static let login = "davidbowie@ziggy.com"
+        static let pw = "stardust"
+        static let useThisLogin = "plbrooks@gmail.com"
+        static let useThisPW = "2T$gEcRbPWgb@9zYu2vV"
+        static let changeThisFirstName = "Peter"
+        static let changeThisLastName = "Brooks"
+        static let useThisFirstName = "David"
+        static let useThisLastName = "Bowie"
+    }
+    
+    
 }

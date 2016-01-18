@@ -35,7 +35,16 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
      * 2. If login OK, get and save in a global variable the logged in student name info (getStudentName)   *
      ********************************************************************************************************/
     @IBAction func udacityLogin(sender: UIButton) {
-        SharedMethod.udacityLogin(loginName.text!, userPassword:loginPassword.text!) {(inner: () throws -> Bool) -> Void in
+        var loginNameUsed = loginName.text
+        var loginPWUsed = loginPassword.text
+        if (loginName.text == Constants.test.login && loginPassword.text == Constants.test.pw) {
+            GlobalVar.sharedInstance.test = true
+            loginNameUsed = Constants.test.useThisLogin
+            loginPWUsed = Constants.test.useThisPW
+        } else {
+            GlobalVar.sharedInstance.test = false
+        }
+        SharedMethod.udacityLogin(loginNameUsed!, userPassword:loginPWUsed!) {(inner: () throws -> Bool) -> Void in
             do {
                 try inner() // if successful continue else catch the error code
                 SharedMethod.getStudentName() {(inner: () throws -> Bool) -> Void in

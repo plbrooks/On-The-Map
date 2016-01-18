@@ -104,8 +104,12 @@ class InfoPostingMapViewController: UIViewController, MKMapViewDelegate, UITextF
             var annotations = [MKPointAnnotation]()     // dictionary of annotations added to the mapview
             let myAnnotation = MKPointAnnotation()      // the single annotation to show
             myAnnotation.coordinate = GlobalVar.sharedInstance.studentThatIsLoggedIn.coordinates
-            let first = GlobalVar.sharedInstance.studentThatIsLoggedIn.firstName
-            let last = GlobalVar.sharedInstance.studentThatIsLoggedIn.lastName
+            var first = GlobalVar.sharedInstance.studentThatIsLoggedIn.firstName
+            var last = GlobalVar.sharedInstance.studentThatIsLoggedIn.lastName
+            if (GlobalVar.sharedInstance.test == true && first == Constants.test.changeThisFirstName && last == Constants.test.changeThisLastName) {
+                first = Constants.test.useThisFirstName
+                last = Constants.test.useThisLastName
+            }
             myAnnotation.title = ""
             myAnnotation.title = "\(first) \(last)"
             annotations.append(myAnnotation)
