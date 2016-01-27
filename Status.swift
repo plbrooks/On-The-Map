@@ -8,9 +8,9 @@
 
 class Status: NSObject {
     
-/********************************************************************************************************
- * various errors that can occur plus variable fields used to create the total error msg                *
- ********************************************************************************************************/
+    /********************************************************************************************************
+     * various errors that can occur plus variable fields used to create the total error msg                *
+     ********************************************************************************************************/
     enum codeIs: ErrorType {
         case noError
         case udacityLogin               (code: Int, text: String)

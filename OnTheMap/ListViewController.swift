@@ -79,6 +79,9 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.selectedBackgroundView = selection
     }
     
+    /********************************************************************************************************
+     * Refresh the locations list                                                                           *
+     ********************************************************************************************************/
     func refreshList() {
         // get the student locations and create the cells
         SharedMethod.getStudentLocations({(inner: () throws -> Bool) -> Void in    // get the locations
